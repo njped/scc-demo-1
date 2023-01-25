@@ -1,0 +1,62 @@
+@use 'base';
+@use 'var' as *;
+
+$primary-color: #cdcdcd;
+$text-size: 1.5em;
+$italic: italic;
+$bold: bolder;
+$spacing: space-between;
+
+@mixin replace-back-with-img ($image) {
+    background-image: $image;
+    background-repeat: no-repeat; 
+    background-size: cover
+}
+
+body {
+    @include replace-back-with-img(url("/images/lightning.jpeg"));
+    margin: 0;
+    padding: 0;
+}
+
+.myflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: $text-center;
+    flex-direction: column;
+}
+
+.container {
+    @extend .myflex;
+    position: absolute;
+    width: 100%;
+    background-color: #cdcdcd;
+
+    a {
+        text-decoration: none;
+        color: #000000;
+        background-color: $nav_color;
+        width: $full;
+        text-align: $text_center;
+    }
+
+    .section1 {
+        text-align: $text-center;
+        font-style: $italic;
+
+        h1 {
+            font-size: $head_font;
+        }
+
+        p {
+            font-size: $para_font;
+        }
+    }
+
+    .section2 {
+        font-weight: $bold;
+        text-align: $text-center;
+        font-size: $text-size;
+    }
+}
+
